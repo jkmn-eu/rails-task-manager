@@ -1,0 +1,15 @@
+<h1>Bienvenue dans le TACHES MANADJEURE</h1>
+
+<p>Voici votre liste de tâches :</p>
+
+<ul>
+  <% @tasks.each do |t| %>
+  <li>
+    <%= link_to t.name, task_path(t.id) %>
+
+    Complétée : <%= 'OUI' if t.completed %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Ajouter une nouvelle tâche', new_path %>
